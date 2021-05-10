@@ -3,12 +3,16 @@
 section{
     height:100vh;
 }
-.middle{
+
+
+.middle{ /*overlay의 최대 크기 역할, image에 따라 커짐 */
     position:absolute;
     top:55px;
     left:0px;
     right:0px;
 
+    /*사진이 너무 커지는 것 방지*/
+    max-height: 100vh;
     overflow:hidden;
 
     z-index: -1;
@@ -53,6 +57,13 @@ section{
     z-index: -1;
 }
 
+.img4mobile{
+    display:none;
+}
+.img4pad{
+    display:none;
+}
+
 .overlay{
     position:absolute;
     top:0;
@@ -72,4 +83,28 @@ section{
     .middle{
         top:44px;
     }
+
+    .img4pc{
+        display:none;
+    }
+
+    .img4mobile{
+        display: block;
+        width:100%;
+    }
+
+    
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+    .img4pc{
+        display:none;
+    }
+
+    .img4pad{
+        display:block;
+        width:100%;
+    }
+
 }
